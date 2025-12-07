@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Style Signup</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="theme-toggle">
+  <button id="themeBtn">Toggle Theme</button>
+</div>
+
+<div class="signup-container">
+  <div class="signup-card">
+    <h1>Sign Up</h1>
+    <p class="subtitle">It's quick and easy.</p>
+
+    <form id="signupForm">
+      <div class="name-fields">
+        <input type="text" id="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" placeholder="Surname" required>
+      </div>
+      <input type="text" id="email" placeholder="Mobile number or email address" required>
+      <input type="password" id="password" placeholder="New password" required>
+      
+      <div class="dob">
+        <label>Date of Birth</label>
+        <div class="dob-selects">
+          <select id="day">
+            <option value="">Day</option>
+            <!-- 1-31 -->
+            <script>
+            for(let i=1;i<=31;i++){document.write(`<option value="${i}">${i}</option>`);}
+            </script>
+          </select>
+          <select id="month">
+            <option value="">Month</option>
+            <script>
+              const months=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+              months.forEach(m=>document.write(`<option value="${m}">${m}</option>`));
+            </script>
+          </select>
+          <select id="year">
+            <option value="">Year</option>
+            <script>
+              const y=new Date().getFullYear();
+              for(let i=y;i>=1900;i--){document.write(`<option value="${i}">${i}</option>`);}
+            </script>
+          </select>
+        </div>
+      </div>
+
+      <div class="gender">
+        <label>Gender</label>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="Female" required> Female</label>
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Custom" required> Custom</label>
+        </div>
+      </div>
+
+      <p class="terms">People who use our service may have uploaded your contact information to Facebook. Learn more.</p>
+      <p class="terms">By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out any time.</p>
+
+      <button type="submit" class="signup-btn">@ Sign Up</button>
+    </form>
+
+    <p class="login-link">Already have an account? <a href="login.html">@ Log in</a></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
